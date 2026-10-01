@@ -29,7 +29,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BOT_TOKEN = ""
+BOT_TOKEN = "8966458476:AAGj5HXT9ESEU-wwCG6IkWrgNs294knYb6A"
 ADMIN_ID_RAW = 6403372647
 
 
