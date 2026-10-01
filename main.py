@@ -9,6 +9,10 @@ from typing import Any
 from aiogram import Bot, Dispatcher, F
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
+from aiogram.client.session.aiohttp import AiohttpSession  # <-- Qo'shildi
+
+# PythonAnywhere bepul tarifi uchun proxy
+session = AiohttpSession(proxy="http://proxy.server:3128")  # <-- Qo'shildi
 from aiogram.filters import Command
 from aiogram.types import (
     CallbackQuery,
@@ -25,7 +29,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BOT_TOKEN = "8966458476:AAFkd4G2wFvHNOgNJGH8ThCHtWemPH7uDXU"
+BOT_TOKEN = ""
 ADMIN_ID_RAW = 6403372647
 
 
@@ -1712,6 +1716,7 @@ def format_section_score(score: int, question_count: int) -> str:
 
 bot = Bot(
     token=BOT_TOKEN,
+    session=session,
     default=DefaultBotProperties(
         parse_mode=ParseMode.HTML,
     ),
